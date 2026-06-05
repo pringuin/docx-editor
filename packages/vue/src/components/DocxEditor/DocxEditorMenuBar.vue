@@ -18,6 +18,7 @@
         @update:model-value="(name: string) => emit('rename', name)"
       />
       <MenuBar
+        :hidden-menu-actions="hiddenMenuActions"
         @action="(action: string) => emit('menu-action', action)"
         @insert-table="(rows: number, cols: number) => emit('insert-table', rows, cols)"
       />
@@ -41,6 +42,8 @@ withDefaults(
     documentNameEditable?: boolean;
     renderLogo?: Component;
     renderTitleBarRight?: Component;
+    /** Action ids to hide from the menu bar (forwarded to `MenuBar`). */
+    hiddenMenuActions?: string[];
   }>(),
   { documentNameEditable: true }
 );

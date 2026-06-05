@@ -12,6 +12,7 @@
         :show-toolbar="true"
         :document-name="fileName"
         :fonts="customFonts"
+        :hidden-menu-actions="hiddenMenuActions"
         @change="handleDocumentChange"
         @error="handleError"
         @ready="handleReady"
@@ -126,6 +127,16 @@ const customFonts = computed(() => {
     { family: 'E2E Custom Font', src: '/e2e-fixtures/inter-regular.woff2' },
     { family: 'E2E Custom Font', src: '/e2e-fixtures/inter-bold.woff2', weight: 700 },
   ];
+});
+
+// E2E hook: `?hiddenMenu=open,save,reportIssue` drives the
+// `hiddenMenuActions` prop so the Playwright suite can assert menu entries
+// (and emptied menus) disappear.
+const hiddenMenuActions = computed<string[] | undefined>(() => {
+  if (typeof window === 'undefined') return undefined;
+  const raw = new URLSearchParams(window.location.search).get('hiddenMenu');
+  if (!raw) return undefined;
+  return raw.split(',').map((id) => id.trim()).filter(Boolean);
 });
 
 // Agent panel — opt-in via `?agentPanel=1` like the React demo. Keeps the

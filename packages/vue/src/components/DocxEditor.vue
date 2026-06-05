@@ -19,6 +19,7 @@
     <div class="docx-editor-vue__toolbar-shell">
       <DocxEditorMenuBar
         :show-menu-bar="showMenuBar"
+        :hidden-menu-actions="hiddenMenuActions"
         :document-name="documentName"
         :document-name-editable="documentNameEditable"
         :render-logo="renderLogo"

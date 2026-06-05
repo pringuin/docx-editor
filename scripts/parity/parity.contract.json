@@ -61,7 +61,8 @@
       "showMarginGuides": "Margin guide overlay. Pairs with marginGuideColor — both deferred together."
     },
     "vueExclusive": {
-      "showMenuBar": "Vue adapter ships a Google-Docs-style menu bar above the toolbar. React uses a single toolbar with no menu-bar concept."
+      "showMenuBar": "Vue adapter ships a Google-Docs-style menu bar above the toolbar. React uses a single toolbar with no menu-bar concept.",
+      "hiddenMenuActions": "Hides individual entries of the Vue-only menu bar by action id. React has no menu-bar concept, so there is nothing to hide."
     }
   },
   "ref": {

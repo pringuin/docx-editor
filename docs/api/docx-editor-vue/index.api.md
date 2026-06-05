@@ -55,6 +55,7 @@ export interface DocxEditorProps {
     externalPlugins?: Plugin_2[];
     fontFamilies?: ReadonlyArray<string | FontOption>;
     fonts?: ReadonlyArray<FontDefinition>;
+    hiddenMenuActions?: string[];
     i18n?: Translations;
     initialZoom?: number;
     mode?: EditorMode;

@@ -65,7 +65,9 @@ export interface MenuItem {
   shortcut?: string;
   onClick?: () => void;
   disabled?: boolean;
-  /** Stable id so the `#submenu` slot can tell which item it's rendering for. */
+  /** Stable action id — used to filter entries via `hiddenMenuActions`. */
+  id?: string;
+  /** Stable key so the `#submenu` slot can tell which item it's rendering for. */
   key?: string;
   /** When true, the item shows a right-chevron and opens the `#submenu` slot on hover. */
   submenu?: boolean;

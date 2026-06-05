@@ -33,6 +33,9 @@ export interface DocxEditorProps {
   showToolbar?: boolean;
   /** Whether to show the title/menu bar. Vue-only chrome toggle. */
   showMenuBar?: boolean;
+  /** Hide individual menu-bar entries by action id (e.g. ['open','save','reportIssue']).
+   *  A top-level menu with no remaining items is not rendered. */
+  hiddenMenuActions?: string[];
   /** Whether to show page rulers. */
   showRuler?: boolean;
   /** Document name shown in the title bar. */

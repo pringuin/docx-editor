@@ -71,6 +71,18 @@ Vue uses `VNodeChild` render functions for `toolbarExtra`, `renderLogo`, and
 `renderTitleBarRight`. In SFC templates, the equivalent named slots are
 `toolbar-extra`, `title-bar-left`, and `title-bar-right`.
 
+The Vue adapter also ships a Google-Docs-style menu bar above the toolbar with
+two extra props:
+
+| Prop                | Type       | Default | Description                                                                                                         |
+| ------------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
+| `showMenuBar`       | `boolean`  | `true`  | Show the title/menu bar                                                                                             |
+| `hiddenMenuActions` | `string[]` | —       | Hide individual menu entries by action id (e.g. `['open','save','reportIssue']`); a menu left empty is not rendered |
+
+Menu action ids: `open`, `save`, `pageSetup` (Datei) · `dirLTR`, `dirRTL`
+(Format) · `insertImage`, `table`, `insertPageBreak`, `insertTOC`, `watermark`
+(Einfügen) · `reportIssue` (Hilfe).
+
 ## Ref Methods
 
 ```tsx

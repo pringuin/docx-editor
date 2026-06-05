@@ -15,6 +15,8 @@ const vueSource = readFileSync(
 const VUE_ONLY_PROPS = new Set([
   // Vue chrome split that does not exist as a React prop.
   'showMenuBar',
+  // Hides entries of the Vue-only menu bar; React has no menu-bar concept.
+  'hiddenMenuActions',
 ]);
 
 const REACT_PROPS_NOT_YET_IN_VUE = new Set([
